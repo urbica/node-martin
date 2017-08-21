@@ -1,0 +1,60 @@
+{
+  "name": "@urbica/martin",
+  "version": "1.0.0",
+  "description": "Mapbox Vector Tiles Server",
+  "author": "Stepan Kuzmin <to.stepan.kuzmin@gmail.com> (stepankuzmin.ru)",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/urbica/martin.git"
+  },
+  "scripts": {
+    "commit": "git-cz",
+    "release": "standard-version",
+    "lint": "eslint src test",
+    "start": "node index.js",
+    "test": "node test/index.js"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "bin": {
+    "martin": "./index.js"
+  },
+  "engine-strict": true,
+  "engines": {
+    "node": ">=7.6.0"
+  },
+  "keywords": [
+    "mapbox vector tiles",
+    "tile server",
+    "mbtiles",
+    "postgis"
+  ],
+  "dependencies": {
+    "@mapbox/tilelive": "5.12.6",
+    "kcors": "2.2.1",
+    "koa": "2.3.0",
+    "koa-compress": "2.0.0",
+    "koa-conditional-get": "2.0.0",
+    "koa-etag": "3.0.0",
+    "koa-logger": "3.0.1",
+    "koa-router": "7.2.1",
+    "minimist": "1.2.0",
+    "pg-promise": "6.5.0",
+    "tilelive-postgis": "1.2.4"
+  },
+  "devDependencies": {
+    "commitizen": "2.9.6",
+    "cz-conventional-changelog": "2.0.0",
+    "eslint": "4.5.0",
+    "eslint-config-airbnb-base": "11.3.1",
+    "eslint-plugin-import": "2.7.0",
+    "standard-version": "4.2.0",
+    "supertest-koa-agent": "0.3.0",
+    "tape": "4.8.0"
+  }
+}
