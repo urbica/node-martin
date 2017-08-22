@@ -1,11 +1,4 @@
-const { selectTilesets } = require('../utils');
-
-let tilesets;
-module.exports = db => async (ctx, next) => {
-  if (!tilesets) {
-    tilesets = await selectTilesets(db);
-  }
-
+module.exports = tilesets => async (ctx, next) => {
   const { tilesetId } = ctx.params;
   const tileset = tilesets[tilesetId];
   if (!tileset) {

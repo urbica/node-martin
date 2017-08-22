@@ -1,0 +1,24 @@
+{
+  "cors": true,
+  "port": 4000,
+  "proxy": true,
+  "postgresql": {
+    "port": null,
+    "host": "localhost",
+    "database": "test",
+    "user": "",
+    "password": ""
+  },
+  "redis": {
+    "host": "localhost",
+    "port": 6379
+  },
+  "tilesets": {
+    "random_points": {
+      "table": "public.random_points",
+      "geometry_field": "geom",
+      "srid": 4326,
+      "simplify_geometries": false
+    }
+  }
+}

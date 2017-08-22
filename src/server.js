@@ -23,7 +23,7 @@ module.exports = (config) => {
 
   app.use(checkError());
 
-  const router = createRouter(config.db);
+  const router = createRouter(config);
   app.use(router.routes(), router.allowedMethods());
 
   return app;

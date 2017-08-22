@@ -1,4 +1,4 @@
-const { getTile } = require('../utils');
+const { getTile } = require('../utils/tilelive');
 
 module.exports = () => async (ctx) => {
   const z = parseInt(ctx.params.z, 10);

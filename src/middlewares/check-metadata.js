@@ -1,5 +1,5 @@
 const url = require('url');
-const { info } = require('../utils');
+const { info } = require('../utils/tilelive');
 
 const metadatas = {};
 module.exports = tilePath => async (ctx, next) => {

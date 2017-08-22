@@ -21,18 +21,20 @@ npm install
 ## Usage
 
 ```shell
-Usage: martin [options] [uri]
+Usage: martin [--help] [--version] <command> <args>
 
-where [uri] is PostgreSQL connection string and [options] is any of:
-  --cors - enables CORS (default: true)
-  --port - port to run on (default: 4000)
-  --socket - use Unix socket instead of port
-  --version - returns running version then exits
+Commands:
+  serve             <uri|config>
+  generate-config   <uri>
 ```
 
 ### Examples
 
 ```shell
-npm install @urbica/martin -g
-martin postgresql://localhost/test
+martin serve postgresql://localhost/test
+```
+
+```shell
+martin generate-config postgresql://localhost/test
+martin serve config.js
 ```

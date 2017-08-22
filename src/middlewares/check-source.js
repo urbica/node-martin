@@ -1,4 +1,4 @@
-const { load } = require('../utils');
+const { load } = require('../utils/tilelive');
 
 const sources = {};
 module.exports = () => async (ctx, next) => {
