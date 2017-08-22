@@ -2,6 +2,8 @@
 
 Martin is a lightweight Node.js [Mapbox Vector Tiles](https://github.com/mapbox/vector-tile-spec) server from a PostGIS database.
 
+![Martin](https://raw.githubusercontent.com/urbica/martin/master/martin.jpg)
+
 ## Installation
 
 martin requires node v7.6.0 or higher for ES2015 and async function support.
