@@ -25,6 +25,12 @@ jobs:
     steps:
       - checkout
 
+      - type: shell
+        name: Install System Dependencies
+        command: sudo echo 'deb http://ftp.us.debian.org/debian testing main contrib non-free' | sudo tee /etc/apt/sources.list.d/testing.list
+        command: sudo apt-get -yqq update
+        command: sudo apt-get install -yqq -t testing gcc
+
       # Download and cache dependencies
       - restore_cache:
           keys:
