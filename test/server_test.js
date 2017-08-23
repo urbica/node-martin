@@ -10,24 +10,12 @@ const { VectorTile, VectorTileFeature } = require('@mapbox/vector-tile');
 const geojsonhint = require('@mapbox/geojsonhint');
 const martin = require('../src/server');
 
-let postgresql;
-if (process.env.NODE_ENV === 'test') {
-  postgresql = {
-    host: process.env.POSTGRES_HOST,
-    database: process.env.POSTGRES_DB,
-    user: process.env.POSTGRES_USER,
-    password: process.env.POSTGRES_PASSWORD
-  };
-} else {
-  postgresql = {
-    host: 'localhost',
-    database: 'test'
-  };
-}
-
 const config = {
   port: 4000,
-  postgresql,
+  postgresql: {
+    host: 'localhost',
+    database: 'test'
+  },
   tilesets: {
     test: {
       table: 'public.test',
