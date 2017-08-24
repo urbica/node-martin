@@ -10,11 +10,12 @@
     "url": "git://github.com/urbica/martin.git"
   },
   "scripts": {
-    "commit": "git-cz",
-    "release": "standard-version",
-    "lint": "eslint src test",
     "start": "node index.js",
-    "test": "node test/*_test.js | tap-dot"
+    "lint": "eslint src test",
+    "test": "node test/*_test.js | tap-dot",
+    "docs": "documentation build src -g --markdown-toc false -f md -o API.md",
+    "commit": "git-cz",
+    "release": "standard-version"
   },
   "config": {
     "commitizen": {
@@ -55,6 +56,7 @@
     "@mapbox/vector-tile": "1.3.0",
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.0.0",
+    "documentation": "5.2.2",
     "eslint": "4.5.0",
     "eslint-config-airbnb-base": "11.3.2",
     "eslint-plugin-import": "2.7.0",

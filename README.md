@@ -40,5 +40,7 @@ martin serve postgresql://localhost/test
 
 ```shell
 martin generate-config postgresql://localhost/test
-martin serve config.js
+martin serve config.json
 ```
+
+See [API](https://github.com/urbica/martin/blob/master/API.md) for more info.
