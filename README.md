@@ -44,3 +44,19 @@ martin serve config.json
 ```
 
 See [API](https://github.com/urbica/martin/blob/master/API.md) for more info.
+
+## Using with Docker
+
+```shell
+docker run -d \
+  -p 4000:4000 \
+  -v $(pwd)/config.json:/config.json \
+  urbica/martin serve /config.json
+```
+
+```shell
+docker run -d \
+  -p 4000:4000 \
+  -v $(pwd)/config.json:/config.json \
+  urbica/martin serve postgresql://user:password@host:port/database
+```
