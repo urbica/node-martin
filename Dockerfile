@@ -13,4 +13,4 @@ RUN echo 'deb http://ftp.us.debian.org/debian testing main contrib non-free' >> 
 RUN yarn global add pm2
 
 EXPOSE 4000
-ENTRYPOINT ["pm2-docker", "start", "-i", "2", "--auto-exit", "--env", "production", "tessella", "--"]
+ENTRYPOINT ["pm2-docker", "start", "-i", "2", "--auto-exit", "--env", "production", "index.js", "--"]
