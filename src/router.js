@@ -12,6 +12,8 @@ const getTile = require('./middlewares/get-tile');
 
 module.exports = (config) => {
   const { tilesets, postgresql, redis } = config;
+
+  const basePath = config.basePath || '/';
   const tilePath = config.tilePath || '/{z}/{x}/{y}.{format}';
 
   const tilePattern = tilePath
@@ -24,7 +26,7 @@ module.exports = (config) => {
     checkTileset(tilesets),
     checkURI(postgresql),
     checkSource(),
-    checkMetadata(tilePath),
+    checkMetadata(path.join(basePath, '/:tilesetId', tilePath)),
     getTileJSON()
   ];
 
@@ -41,9 +43,14 @@ module.exports = (config) => {
 
   const router = Router();
 
-  router.get('/index.json', getTilesets(tilesets));
-  router.get('/:tilesetId.json', ...getTileJSONMiddlewares);
-  router.get(path.join('/:tilesetId', tilePattern), ...getTileMiddlewares);
+  const indexRoute = path.join(basePath, '/index.json');
+  router.get(indexRoute, getTilesets(tilesets));
+
+  const tilesetRoute = path.join(basePath, '/:tilesetId.json');
+  router.get(tilesetRoute, ...getTileJSONMiddlewares);
+
+  const tileRoute = path.join(basePath, '/:tilesetId', tilePattern);
+  router.get(tileRoute, ...getTileMiddlewares);
 
   return router;
 };

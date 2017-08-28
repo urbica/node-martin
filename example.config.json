@@ -2,6 +2,7 @@
   "cors": true,
   "port": 4000,
   "proxy": true,
+  "basePath": "/",
   "tilePath": "/{z}/{x}/{y}.{format}",
   "postgresql": {
     "port": null,
