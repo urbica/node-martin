@@ -46,7 +46,25 @@ async function generateConfig(uri) {
 }
 
 function readConfig(fileName) {
-  return JSON.parse(fs.readFileSync(fileName, 'utf8'));
+  const config = JSON.parse(fs.readFileSync(fileName, 'utf8'));
+  if (!config.postgresql && process.env.POSTGRES_DB) {
+    config.postgresql = {
+      database: process.env.POSTGRES_DB,
+      host: process.env.POSTGRES_HOST,
+      port: process.env.POSTGRES_PORT || 5432,
+      user: process.env.POSTGRES_USER,
+      password: process.env.POSTGRES_PASSWORD
+    };
+  }
+
+  if (!config.redis && process.env.REDIS_HOST) {
+    config.redis = {
+      host: process.env.REDIS_HOST,
+      port: process.env.REDIS_PORT || 6379
+    };
+  }
+
+  return config;
 }
 
 async function writeConfig(uri) {
@@ -83,6 +101,13 @@ function parse(argv) {
       const config = protocol === 'postgresql:'
         ? generateConfig(fileNameOrURI)
         : readConfig(fileNameOrURI);
+
+      if (!config.postgresql) {
+        process.stdout.write(
+          'Error: PostgreSQL connection is not specified.\n'
+        );
+        return help();
+      }
 
       return config;
     }
