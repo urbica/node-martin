@@ -1,4 +1,5 @@
 const url = require('url');
+const path = require('path');
 const { info } = require('../utils/tilelive');
 
 const metadatas = {};
@@ -11,15 +12,16 @@ module.exports = tilePath => async (ctx, next) => {
     try {
       metadata = await info(uri);
       const { format } = metadata;
+      const { dir } = path.parse(ctx.path);
 
-      const pathname = tilePath
+      const tilesPath = tilePath
         .replace(':tilesetId', tilesetId)
         .replace('{format}', format);
 
       const tilesUrl = url.format({
         protocol: ctx.protocol,
         host: ctx.host,
-        pathname
+        pathname: path.join(dir, tilesPath)
       });
 
       metadata.tiles = [tilesUrl];
