@@ -2,6 +2,7 @@
   "cors": true,
   "port": 4000,
   "proxy": true,
+  "tilePath": "/{z}/{x}/{y}.{format}",
   "postgresql": {
     "port": null,
     "host": "localhost",
@@ -14,8 +15,8 @@
     "port": 6379
   },
   "tilesets": {
-    "random_points": {
-      "table": "public.random_points",
+    "public.test": {
+      "table": "public.test",
       "geometry_field": "geom",
       "srid": 4326,
       "simplify_geometries": false
