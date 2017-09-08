@@ -103,9 +103,7 @@ function parse(argv) {
         : readConfig(fileNameOrURI);
 
       if (!config.postgresql) {
-        process.stdout.write(
-          'Error: PostgreSQL connection is not specified.\n'
-        );
+        process.stdout.write('Error: PostgreSQL connection is not specified.\n');
         return help();
       }
 

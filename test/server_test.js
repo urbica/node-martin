@@ -76,7 +76,7 @@ function runTests(app) {
           res.data += chunk;
         });
         res.on('end', () => {
-          callback(null, new Buffer(res.data, 'binary'));
+          callback(null, Buffer.from(res.data, 'binary'));
         });
       })
       .end((error, response) => {
