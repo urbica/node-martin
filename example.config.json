@@ -2,8 +2,7 @@
   "cors": true,
   "port": 4000,
   "proxy": true,
-  "basePath": "/",
-  "tilePath": "/{z}/{x}/{y}.{format}",
+  "tilesPath": "http://localhost:4000/{tilesetId}/{z}/{x}/{y}.{format}",
   "postgresql": {
     "port": null,
     "host": "localhost",

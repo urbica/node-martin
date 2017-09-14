@@ -64,7 +64,7 @@ function readConfig(fileName) {
     };
   }
 
-  return config;
+  return new Promise(resolve => resolve(config));
 }
 
 async function writeConfig(uri) {
@@ -76,7 +76,7 @@ async function writeConfig(uri) {
   process.exit(0);
 }
 
-function parse(argv) {
+async function parse(argv) {
   const args = minimist(argv);
 
   if (args.version) {
@@ -99,8 +99,8 @@ function parse(argv) {
 
       const { protocol } = url.parse(fileNameOrURI);
       const config = protocol === 'postgresql:'
-        ? generateConfig(fileNameOrURI)
-        : readConfig(fileNameOrURI);
+        ? await generateConfig(fileNameOrURI)
+        : await readConfig(fileNameOrURI);
 
       if (!config.postgresql) {
         process.stdout.write('Error: PostgreSQL connection is not specified.\n');
