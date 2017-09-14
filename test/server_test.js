@@ -12,6 +12,7 @@ const martin = require('../src/server');
 
 const config = {
   port: 4000,
+  tilesURL: 'http://localhost:4000/{tilesetId}/{z}/{x}/{y}.{format}',
   postgresql: {
     host: 'localhost',
     database: 'test'
