@@ -15,6 +15,7 @@ const checkError = require('./middlewares/check-error');
  * @property {boolean} [cors] - enables CORS
  * @property {number} port - port to run on
  * @property {boolean} [proxy] - when true proxy header fields will be trusted
+ * @property {string} tilesURL - tiles endpoint URL
  * @property {postgresql} postgresql - PostgreSQL connection information
  * @property {redis} [redis] - Redis connection information
  * @property {tilesets} tilesets - tilesets description

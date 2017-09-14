@@ -40,6 +40,7 @@ async function generateConfig(uri) {
     cors: true,
     port: 4000,
     proxy: true,
+    tilesURL: 'http://localhost:4000/{tilesetId}/{z}/{x}/{y}.{format}',
     postgresql: connection,
     tilesets
   };
@@ -104,6 +105,11 @@ async function parse(argv) {
 
       if (!config.postgresql) {
         process.stdout.write('Error: PostgreSQL connection is not specified.\n');
+        return help();
+      }
+
+      if (!config.tilesURL) {
+        process.stdout.write('Error: tilesURL is not specified.\n');
         return help();
       }
 

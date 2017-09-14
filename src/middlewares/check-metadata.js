@@ -1,8 +1,7 @@
-const url = require('url');
 const { info } = require('../utils/tilelive');
 
 const metadatas = {};
-module.exports = tilePath => async (ctx, next) => {
+module.exports = tilesURL => async (ctx, next) => {
   const { tilesetId } = ctx.params;
   const { uri } = ctx.state;
 
@@ -12,17 +11,11 @@ module.exports = tilePath => async (ctx, next) => {
       metadata = await info(uri);
       const { format } = metadata;
 
-      const pathname = tilePath
-        .replace(':tilesetId', tilesetId)
+      const tiles = tilesURL
+        .replace('{tilesetId}', tilesetId)
         .replace('{format}', format);
 
-      const tilesUrl = url.format({
-        protocol: ctx.protocol,
-        host: ctx.host,
-        pathname
-      });
-
-      metadata.tiles = [tilesUrl];
+      metadata.tiles = [tiles];
       metadata.tilejson = '2.2.0';
 
       metadatas[tilesetId] = metadata;

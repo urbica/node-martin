@@ -2,36 +2,29 @@
 
 ## config
 
-[src/server.js:65-84](https://github.com/urbica/martin/blob/79dc63ec0114346c4544dd11a33c82b59ffdc6e1/src/server.js#L65-L84 "Source code on GitHub")
+[src/server.js:66-85](https://github.com/urbica/martin/blob/47a074bcac3c51195a6da95e1a072e46b157357e/src/server.js#L66-L85 "Source code on GitHub")
 
 Configuration
 
 Type: [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-
-**Parameters**
-
--   `config`  
 
 **Properties**
 
 -   `cors` **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)?** enables CORS
 -   `port` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** port to run on
 -   `proxy` **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)?** when true proxy header fields will be trusted
+-   `tilesURL` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** tiles endpoint URL
 -   `postgresql` **[postgresql](#postgresql)** PostgreSQL connection information
 -   `redis` **[redis](#redis)?** Redis connection information
--   `tilesets` **[tilesets](#tilesets)?** tilesets description
+-   `tilesets` **[tilesets](#tilesets)** tilesets description
 
 ## postgresql
 
-[src/server.js:65-84](https://github.com/urbica/martin/blob/79dc63ec0114346c4544dd11a33c82b59ffdc6e1/src/server.js#L65-L84 "Source code on GitHub")
+[src/server.js:66-85](https://github.com/urbica/martin/blob/47a074bcac3c51195a6da95e1a072e46b157357e/src/server.js#L66-L85 "Source code on GitHub")
 
 PostgreSQL Connection
 
 Type: [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-
-**Parameters**
-
--   `config`  
 
 **Properties**
 
@@ -43,15 +36,11 @@ Type: [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
 
 ## redis
 
-[src/server.js:65-84](https://github.com/urbica/martin/blob/79dc63ec0114346c4544dd11a33c82b59ffdc6e1/src/server.js#L65-L84 "Source code on GitHub")
+[src/server.js:66-85](https://github.com/urbica/martin/blob/47a074bcac3c51195a6da95e1a072e46b157357e/src/server.js#L66-L85 "Source code on GitHub")
 
 Redis Connection
 
 Type: [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-
-**Parameters**
-
--   `config`  
 
 **Properties**
 
@@ -60,27 +49,19 @@ Type: [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
 
 ## tilesets
 
-[src/server.js:65-84](https://github.com/urbica/martin/blob/79dc63ec0114346c4544dd11a33c82b59ffdc6e1/src/server.js#L65-L84 "Source code on GitHub")
+[src/server.js:66-85](https://github.com/urbica/martin/blob/47a074bcac3c51195a6da95e1a072e46b157357e/src/server.js#L66-L85 "Source code on GitHub")
 
 Tilesets
 
 Type: [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)&lt;[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), [tileset](#tileset)>
 
-**Parameters**
-
--   `config`  
-
 ## tileset
 
-[src/server.js:65-84](https://github.com/urbica/martin/blob/79dc63ec0114346c4544dd11a33c82b59ffdc6e1/src/server.js#L65-L84 "Source code on GitHub")
+[src/server.js:66-85](https://github.com/urbica/martin/blob/47a074bcac3c51195a6da95e1a072e46b157357e/src/server.js#L66-L85 "Source code on GitHub")
 
 Tileset
 
 Type: [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-
-**Parameters**
-
--   `config`  
 
 **Properties**
 
@@ -91,7 +72,7 @@ Type: [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
 
 ## martin
 
-[src/server.js:65-84](https://github.com/urbica/martin/blob/79dc63ec0114346c4544dd11a33c82b59ffdc6e1/src/server.js#L65-L84 "Source code on GitHub")
+[src/server.js:66-85](https://github.com/urbica/martin/blob/47a074bcac3c51195a6da95e1a072e46b157357e/src/server.js#L66-L85 "Source code on GitHub")
 
 Mapbox Vector Tiles Server
 

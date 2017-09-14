@@ -1,3 +1,4 @@
+const url = require('url');
 const path = require('path');
 const Router = require('koa-router');
 
@@ -13,8 +14,8 @@ const getTile = require('./middlewares/get-tile');
 module.exports = (config) => {
   const { tilesets, postgresql, redis } = config;
 
-  const basePath = config.basePath || '/';
-  const tilePath = config.tilePath || '/{z}/{x}/{y}.{format}';
+  const { pathname } = url.parse(config.tilesURL);
+  const [basePath, tilePath] = decodeURIComponent(pathname).split('{tilesetId}');
 
   const tilePattern = tilePath
     .replace('{z}', ':z(\\d+)')
@@ -26,7 +27,7 @@ module.exports = (config) => {
     checkTileset(tilesets),
     checkURI(postgresql),
     checkSource(),
-    checkMetadata(path.join(basePath, '/:tilesetId', tilePath)),
+    checkMetadata(config.tilesURL),
     getTileJSON()
   ];
 
