@@ -1,8 +1,7 @@
 # Urbica Martin
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/urbica/martin.svg)](https://greenkeeper.io/)
-
 [![Build Status](https://travis-ci.org/urbica/martin.svg?branch=master)](https://travis-ci.org/urbica/martin)
+[![Greenkeeper badge](https://badges.greenkeeper.io/urbica/martin.svg)](https://greenkeeper.io/)
 
 Martin is a lightweight Node.js [Mapbox Vector Tiles](https://github.com/mapbox/vector-tile-spec) server from a PostGIS database.
 
