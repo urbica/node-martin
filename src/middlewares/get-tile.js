@@ -11,7 +11,6 @@ module.exports = () => async (ctx) => {
     ctx.set(headers);
     ctx.body = tile;
   } catch (error) {
-    console.error(error.message);
     ctx.status = 204;
     ctx.body = undefined;
   }
