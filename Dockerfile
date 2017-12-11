@@ -1,5 +1,5 @@
-FROM node:7-onbuild
-MAINTAINER Stepan Kuzmin <to.stepan.kuzmin@gmail.com>
+FROM node:8-onbuild
+LABEL maintainer="Stepan Kuzmin <to.stepan.kuzmin@gmail.com>"
 
 ENV NODE_ENV=production
 ENV NPM_CONFIG_COLOR=false
@@ -11,4 +11,4 @@ RUN echo 'deb http://ftp.us.debian.org/debian testing main contrib non-free' >> 
   && apt-get install -yqq -t testing gcc
 
 EXPOSE 4000
-ENTRYPOINT ["index.js", "--"]
+ENTRYPOINT ["node", "index.js", "--"]
