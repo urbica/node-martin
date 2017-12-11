@@ -30,4 +30,10 @@ async function main(argv) {
   process.on('SIGTERM', shutdown);
 }
 
+process.on('uncaughtException', (error) => {
+  process.stdout.write(error.message);
+  process.stdout.write('uncaught Exception, terminating\n');
+  process.exit(1);
+});
+
 main(process.argv.slice(2));

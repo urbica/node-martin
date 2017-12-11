@@ -1,7 +1,11 @@
 {
-  "extends": "airbnb-base",
+  "extends": [
+    "airbnb-base",
+    "plugin:node/recommended"
+  ],
   "plugins": [
-    "import"
+    "import",
+    "node"
   ],
   "env": {
     "node": true
