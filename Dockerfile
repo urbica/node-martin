@@ -10,7 +10,5 @@ RUN echo 'deb http://ftp.us.debian.org/debian testing main contrib non-free' >> 
   && apt-get -yqq update \
   && apt-get install -yqq -t testing gcc
 
-RUN yarn global add pm2
-
 EXPOSE 4000
-ENTRYPOINT ["pm2-docker", "start", "-i", "2", "--auto-exit", "--env", "production", "index.js", "--"]
+ENTRYPOINT ["index.js", "--"]
