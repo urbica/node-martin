@@ -62,7 +62,7 @@
     "eslint-plugin-import": "2.8.0",
     "eslint-plugin-node": "5.2.1",
     "pbf": "3.1.0",
-    "standard-version": "4.2.0",
+    "standard-version": "4.3.0",
     "supertest-koa-agent": "0.3.0",
     "tap-dot": "1.0.5",
     "tape": "4.8.0"
